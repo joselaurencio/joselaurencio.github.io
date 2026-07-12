@@ -5,10 +5,9 @@ Guidance for AI coding agents working in this repository.
 ## Project overview
 
 Jose Laurencio's personal portfolio — the "Mission Control" engineering
-portfolio — served via GitHub Pages at `joselaurencio.github.io`. Next.js
-(App Router) with a static export (`output: 'export'`), TypeScript,
-Tailwind CSS v4, Framer Motion, and MDX content via Velite. Full spec lives
-in `docs/`:
+portfolio. Next.js (App Router) with a static export (`output: 'export'`),
+TypeScript, Tailwind CSS v4, Framer Motion, and MDX content via Velite. Full
+spec lives in `docs/`:
 
 - `docs/PRD.md` — vision, IA, pages, data model, content workflow
 - `docs/DESIGN_SYSTEM.md` — typography, color (with computed contrast
@@ -19,10 +18,19 @@ in `docs/`:
 Read those before adding anything nontrivial — most "where does this go"
 and "what color/spacing/animation" questions are already answered there.
 
-Legacy: `index.html` / `styles.css` / `script.js` at the repo root are the
-**previous** plain-HTML site, superseded by the Next.js app but left in
-place rather than deleted without being asked. They are not part of the
-build and can be removed once the new site fully replaces it.
+**Hosting note:** the GitHub repo was renamed from `joselaurencio.github.io`
+to `personal-page`. A repo must be named exactly `<username>.github.io` to
+get GitHub's automatic user-page hosting at the root domain — under
+`personal-page`, GitHub Pages (once enabled) would serve as a *project*
+page at `joselaurencio.github.io/personal-page/` instead, which needs a
+`basePath`/`assetPrefix` in `next.config.ts` that isn't set yet (PRD/
+ARCHITECTURE assumed a user-page repo with none needed). If the intent is
+still to serve from the bare `joselaurencio.github.io` domain, that now
+requires a custom-domain (CNAME) setup instead. Don't assume either way —
+confirm with Jose before touching `next.config.ts` or deploy config.
+
+The previous plain-HTML site (`index.html` / `styles.css` / `script.js`)
+has been deleted — the Next.js app is the only site now.
 
 ## Working in this repo
 

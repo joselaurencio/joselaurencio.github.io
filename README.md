@@ -1,4 +1,4 @@
-# joselaurencio.github.io
+# personal-page
 
 Jose Laurencio's personal engineering portfolio — "Mission Control." Built
 with Next.js, TypeScript, Tailwind CSS, Framer Motion, and Markdown/MDX
@@ -20,8 +20,8 @@ reasoning behind design/architecture decisions, see:
 You need [Node.js](https://nodejs.org) 20 or newer.
 
 ```bash
-git clone https://github.com/joselaurencio/joselaurencio.github.io.git
-cd joselaurencio.github.io
+git clone https://github.com/joselaurencio/personal-page.git
+cd personal-page
 npm install
 npm run dev
 ```
