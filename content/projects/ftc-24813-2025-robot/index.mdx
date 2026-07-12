@@ -1,0 +1,74 @@
+---
+slug: "ftc-24813-2025-robot"
+title: "FTC #24813 Competition Robot"
+oneLiner: "Team #24813's season robot — the build behind a Finalist finish and back-to-back Inspire Awards."
+status: "active"
+tags: ["robotics", "ftc", "hardware", "java"]
+startDate: "2025-09-01"
+featured: true
+draft: false
+lessonsLearned:
+  - "A mechanism that works reliably on carpet in practice can behave completely differently on a competition field's tile transitions — field-accurate testing surfaces problems practice space never will."
+  - "Judged awards (Inspire, Think, Control) reward how well the engineering process is documented and explained, not just how the robot performs on the field."
+futureImprovements:
+  - "Move autonomous routines from a hard-coded path to a more general path-following approach so new field layouts require less rewrite."
+  - "Add a dedicated practice log so iteration history isn't reconstructed from memory before each competition."
+---
+
+## Problem
+
+Build a robot for FIRST Tech Challenge competition capable of scoring
+consistently under a strict match clock, driven and iterated on by a young
+team in its first few seasons of competition.
+
+## Constraints
+
+- Season-length build window, shared with school and camp commitments.
+- Standard FTC hardware/software rules (control system, game-specific
+  scoring elements, field dimensions) set by FIRST each season.
+- Small team — design, build, and code all had to be owned by the same few
+  people across every subsystem.
+
+## Design Process
+
+Subsystems were built and tested independently (drivetrain, scoring
+mechanism, autonomous routine) before integration, so a failure in one
+subsystem didn't block testing on the others.
+
+## Iterations & Failures
+
+Early scoring-mechanism prototypes worked in isolation but jammed once
+mounted on the full chassis due to wiring routing that hadn't accounted for
+the mechanism's full range of motion — resolved by rerouting and adding a
+cable-management pass as a standing step in every build iteration afterward.
+
+## Testing & Validation
+
+Ran full match simulations against practice-field mockups ahead of each
+event, specifically testing the autonomous routine against the actual field
+tile seams that caused drift issues that don't show up on smooth flooring.
+
+## Optimization
+
+Tuned autonomous routine timing and drivetrain PID values iteratively between
+events based on match footage review, not just practice-field results.
+
+## Final Result
+
+Season results across events: Dean's List Semifinalist, Inspire Award (1st),
+and Finalist Award (2nd) at the Adventist Robotics Championship — the
+strongest season result on record for the team. Full record on the
+[Robotics hub](/robotics).
+
+## Lessons Learned
+
+The judged interview mattered as much as the field performance — being able
+to explain *why* a design decision was made, including the failed attempts,
+consistently mattered more than a polished final answer with no visible
+process behind it.
+
+## Future Improvements
+
+Next season's build starts from a more general autonomous approach and a
+running practice log, both aimed at cutting the rebuild-from-memory time
+before each event.

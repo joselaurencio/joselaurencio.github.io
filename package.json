@@ -1,0 +1,55 @@
+{
+  "name": "joselaurencio-mission-control",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "velite build && next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "fetch:ftc": "tsx scripts/fetch-ftc-scout.ts",
+    "fetch:youtube": "tsx scripts/fetch-youtube-feed.ts",
+    "fetch:github": "tsx scripts/fetch-github-activity.ts",
+    "fetch:all": "npm run fetch:ftc && npm run fetch:youtube && npm run fetch:github"
+  },
+  "dependencies": {
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "framer-motion": "12.42.2",
+    "cmdk": "1.1.1",
+    "lucide-react": "1.24.0",
+    "geist": "1.7.2",
+    "zod": "4.4.3",
+    "clsx": "2.1.1",
+    "tailwind-merge": "3.6.0",
+    "class-variance-authority": "0.7.1",
+    "@radix-ui/react-dialog": "1.1.19",
+    "@radix-ui/react-tooltip": "1.2.12",
+    "@radix-ui/react-separator": "1.1.11",
+    "@radix-ui/react-slot": "1.3.0"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "tailwindcss": "4.3.2",
+    "@tailwindcss/postcss": "4.3.2",
+    "postcss": "8.5.18",
+    "velite": "0.4.0",
+    "tsx": "4.23.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.10",
+    "@types/node": "26.1.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true,
+    "fsevents@2.3.3": true,
+    "esbuild@0.25.12": true
+  }
+}

@@ -1,0 +1,85 @@
+---
+slug: "mission-control-portfolio"
+title: "Mission Control Portfolio"
+oneLiner: "This site — a portfolio built as a spec-driven engineering project, not a template."
+status: "active"
+tags: ["software", "web", "typescript", "design-systems"]
+startDate: "2026-07-12"
+githubLink: "https://github.com/joselaurencio/joselaurencio.github.io"
+featured: true
+draft: false
+lessonsLearned:
+  - "Writing the PRD and design system before any component code meant catching a real accessibility bug (a text color that failed contrast) with math instead of after a manual design pass."
+  - "A 'no fabricated content' rule is harder to hold to than it sounds — a first pass at a YouTube channel ID looked right and was actually a different, unrelated channel; verifying against a second independent source caught it."
+futureImprovements:
+  - "Wire the scheduled GitHub Action that keeps GitHub/YouTube/FTC data fresh automatically instead of hand-seeded JSON."
+  - "Build out Projects, Notebook, Robotics, and the rest of the routes the homepage already links to."
+---
+
+## Problem
+
+Most student portfolios read as a project list with adjectives attached. The
+goal here was a portfolio that shows the engineering process itself —
+problem framing, constraints, failed attempts, and measured results — for
+someone screening candidates in under a minute.
+
+## Constraints
+
+- Fully static hosting on GitHub Pages — no server at runtime, so every
+  "live" data feed (GitHub activity, FTC record, YouTube uploads) has to be
+  fetched at build time, not on-demand.
+- Content has to be publishable by creating one folder and editing one
+  Markdown file — no touching component code to add a project.
+- Lighthouse ≥ 95 across Performance/Accessibility/Best Practices/SEO, and
+  WCAG AA at minimum.
+
+## Design Process
+
+Built spec-first: a full PRD, then a design system with every color pairing
+checked against the WCAG contrast formula, then a complete file/folder
+architecture — all before writing a component.
+
+## Iterations & Failures
+
+The design system's first-draft palette included a "tertiary text" color
+that looked fine but only cleared a 3.3-3.7:1 contrast ratio against the
+site's dark backgrounds — short of the 4.5:1 required for body-sized text
+like timestamps. Caught during a deliberate contrast audit and replaced with
+a corrected value before any component used it.
+
+Separately, an early data-gathering pass resolved the wrong YouTube channel
+ID for @robocodex — a scraping shortcut picked up an unrelated channel's ID
+that happened to appear on the same page. Cross-checking against the page's
+canonical link caught the mismatch before it shipped.
+
+## Testing & Validation
+
+Every text/background color pairing in the design system is computed against
+the WCAG relative-luminance formula rather than eyeballed, with the results
+recorded directly in the design system document.
+
+## Optimization
+
+Chose a static-export architecture specifically so GitHub/YouTube/FTC data
+never gets fetched client-side on every visit — a scheduled build job
+refreshes committed JSON instead, keeping the deployed site fully static and
+fast.
+
+## Final Result
+
+Mission Control homepage live with real seeded data: verified FTC Team
+#24813 competition record, the actual RoboCodex YouTube feed, and a real
+season robot project — see the [Robotics hub](/robotics) and the
+[Programming](/programming) page as they come online.
+
+## Lessons Learned
+
+Writing the accessibility and content rules down before building anything
+caught two real mistakes (the contrast bug, the wrong channel ID) that a
+"build first, polish later" approach would likely have shipped.
+
+## Future Improvements
+
+The homepage is live; Projects, Notebook, Research, Robotics, Programming,
+Timeline, Books, Dashboard, and Contact are the next builds, each reusing the
+same component and data layer already wired up here.

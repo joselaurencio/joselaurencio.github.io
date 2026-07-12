@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+ * Design tokens — docs/DESIGN_SYSTEM.md §2–5
+ * Dark is the canonical/default theme (§3.2). Light is a fully supported
+ * secondary theme (§3.3), toggled via [data-theme="light"] on <html>.
+ * ------------------------------------------------------------------------ */
+
+:root {
+  --bg-void: #05070a;
+  --bg-panel: #0b0f14;
+  --bg-panel-raised: #11161d;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-hairline-strong: rgba(255, 255, 255, 0.16);
+  --text-primary: #e7ecf2;
+  --text-secondary: #93a1b0;
+  --text-tertiary: #788999;
+  --accent-signal: #4fd1ff;
+  --accent-signal-muted: rgba(79, 209, 255, 0.12);
+  --status-nominal: #34d399;
+  --status-caution: #fbbf24;
+  --status-critical: #f87171;
+  --blueprint-grid: rgba(79, 209, 255, 0.06);
+}
+
+[data-theme="light"] {
+  --bg-void: #f7f9fb;
+  --bg-panel: #ffffff;
+  --bg-panel-raised: #eff3f7;
+  --border-hairline: rgba(9, 17, 26, 0.08);
+  --border-hairline-strong: rgba(9, 17, 26, 0.16);
+  --text-primary: #0b1220;
+  --text-secondary: #3e4c5a;
+  --text-tertiary: #5b6b7a;
+  --accent-signal: #0284c7;
+  --accent-signal-muted: rgba(2, 132, 199, 0.1);
+  --status-nominal: #059669;
+  --status-caution: #b45309;
+  --status-critical: #dc2626;
+  --blueprint-grid: rgba(2, 132, 199, 0.05);
+}
+
+@theme inline {
+  --color-void: var(--bg-void);
+  --color-panel: var(--bg-panel);
+  --color-panel-raised: var(--bg-panel-raised);
+  --color-border-hairline: var(--border-hairline);
+  --color-border-hairline-strong: var(--border-hairline-strong);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent: var(--accent-signal);
+  --color-accent-muted: var(--accent-signal-muted);
+  --color-status-nominal: var(--status-nominal);
+  --color-status-caution: var(--status-caution);
+  --color-status-critical: var(--status-critical);
+  --color-blueprint-grid: var(--blueprint-grid);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --text-display: clamp(2.75rem, 2rem + 3.5vw, 5.5rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-h1: clamp(2.25rem, 1.8rem + 2vw, 3.25rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.015em;
+  --text-h2: clamp(1.625rem, 1.4rem + 1vw, 2.25rem);
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h3: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.005em;
+  --text-h4: clamp(1.0625rem, 1rem + 0.2vw, 1.1875rem);
+  --text-h4--line-height: 1.3;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-body-sm: 0.9375rem;
+  --text-body-sm--line-height: 1.55;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+  --text-mono-label: 0.75rem;
+  --text-mono-label--line-height: 1.3;
+  --text-mono-label--letter-spacing: 0.06em;
+  --text-mono-stat: clamp(1.5rem, 1.2rem + 1.2vw, 2.5rem);
+  --text-mono-stat--line-height: 1.1;
+  --text-mono-stat--letter-spacing: -0.01em;
+  --text-mono-code: 0.875rem;
+  --text-mono-code--line-height: 1.6;
+
+  --ease-mission-in: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-mission-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --animate-status-pulse: status-pulse 2.4s var(--ease-mission-in) infinite;
+  --animate-radar-sweep: radar-sweep 1.8s linear infinite;
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes radar-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Base layer
+ * ------------------------------------------------------------------------ */
+
+@layer base {
+  * {
+    border-color: var(--border-hairline);
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  [data-theme="light"] {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--accent-signal-muted);
+    color: var(--text-primary);
+  }
+
+  /* Visible focus ring everywhere — docs/DESIGN_SYSTEM.md §7.2 */
+  :focus-visible {
+    outline: 2px solid var(--accent-signal);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-void);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-hairline-strong);
+    border-radius: 999px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Utilities
+ * ------------------------------------------------------------------------ */
+
+@utility blueprint-grid {
+  background-image:
+    linear-gradient(to right, var(--color-blueprint-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-blueprint-grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility text-balance-pretty {
+  text-wrap: pretty;
+}

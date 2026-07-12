@@ -1,0 +1,85 @@
+{
+  "currentMission": "FTC Team #24813 season campaign — transitioning the program from FIRST LEGO League into FIRST Tech Challenge while running the next RoboCodex Robotics Camp cohort.",
+  "objectives": [
+    {
+      "label": "FTC Season Build",
+      "detail": "Designing and iterating the season robot for Team #24813, coming off a Finalist + Inspire Award result last championship.",
+      "progressPercent": 40,
+      "icon": "cpu"
+    },
+    {
+      "label": "Currently Learning",
+      "detail": "Deepening Java and system design — moving from block-based FLL programming to full FTC SDK control code.",
+      "progressPercent": 55,
+      "icon": "code-2"
+    },
+    {
+      "label": "RoboCodex Camp",
+      "detail": "Planning the next multi-day robotics camp cohort — curriculum, tracks, and materials for ages 10-14.",
+      "progressPercent": 25,
+      "icon": "users"
+    },
+    {
+      "label": "Currently Reading",
+      "detail": "The Inner Game of Tennis and The Count of Monte Cristo.",
+      "progressPercent": 60,
+      "icon": "book-open"
+    }
+  ],
+  "goals": [
+    {
+      "label": "Dunk a basketball",
+      "target": "Before the end of 2026",
+      "progressPercent": 35,
+      "category": "personal"
+    },
+    {
+      "label": "Finish The Inner Game of Tennis",
+      "target": "Reading log",
+      "progressPercent": 70,
+      "category": "personal"
+    },
+    {
+      "label": "Finish The Count of Monte Cristo",
+      "target": "Reading log",
+      "progressPercent": 30,
+      "category": "personal"
+    },
+    {
+      "label": "FTC #24813 season record",
+      "target": "Improve on 2025's Finalist + Inspire Award result",
+      "progressPercent": 40,
+      "category": "robotics"
+    }
+  ],
+  "systems": [
+    {
+      "name": "Robotics",
+      "status": "in-progress",
+      "summary": "FTC Team #24813 — three seasons competing, an Inspire Award and a Finalist finish on record.",
+      "href": "/robotics",
+      "icon": "bot"
+    },
+    {
+      "name": "Programming",
+      "status": "in-progress",
+      "summary": "Java, system design, and FTC control software — moving from block-based to full SDK code.",
+      "href": "/programming",
+      "icon": "terminal"
+    },
+    {
+      "name": "Research",
+      "status": "planned",
+      "summary": "Optimization and engineering-design write-ups, published as they're worked through.",
+      "href": "/research",
+      "icon": "flask-conical"
+    },
+    {
+      "name": "Leadership",
+      "status": "nominal",
+      "summary": "Founder of RoboCodex Robotics Camp — curriculum, teaching, and camp operations.",
+      "href": "/projects/robocodex-robotics-camp",
+      "icon": "compass"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+---
+slug: "2026-07-12-launching-mission-control"
+date: "2026-07-12"
+title: "Launching Mission Control"
+excerpt: "Shipping the homepage of the new portfolio — spec-first, with real FTC and YouTube data instead of placeholder content."
+tags: ["software", "web", "meta"]
+relatedProject: "mission-control-portfolio"
+draft: false
+---
+
+First real piece of the new portfolio is live: the Mission Control homepage.
+
+Went spec-first on this one — a full PRD, a design system with every color
+pairing checked against the actual WCAG contrast formula, and a complete file
+architecture, all written before any component code. That process caught two
+real mistakes before they shipped: a text color that looked fine but failed
+accessibility contrast, and a YouTube channel ID that pointed at the wrong
+channel entirely.
+
+Next up: the pages the homepage already links to — Projects, Notebook,
+Robotics, and the rest.

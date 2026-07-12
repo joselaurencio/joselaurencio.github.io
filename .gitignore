@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+
+# next.js build output
+/.next/
+/out/
+
+# velite generated content layer
+/.velite/
+
+# pagefind search index (generated post-build)
+/public/pagefind/
+
+# env
+.env*.local
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# os
+.DS_Store
+
+# logs
+npm-debug.log*

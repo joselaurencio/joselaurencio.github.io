@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-07-12T00:00:00.000Z",
+  "teamNumber": 24813,
+  "teamName": "SHCA Happy Hawks",
+  "school": "Scenic Hills Christian Academy",
+  "location": { "city": "San Antonio", "state": "TX", "country": "USA" },
+  "rookieYear": 2023,
+  "sponsors": [
+    "Scenic Hills SDA Church",
+    "R&L Overhead Door Inc",
+    "Laurel Ridge Treatment Center"
+  ],
+  "seasons": [
+    {
+      "season": 2023,
+      "events": [
+        {
+          "eventCode": "USARLCMP",
+          "name": "Adventist Robotics FTC Championship",
+          "start": "2024-04-13",
+          "end": "2024-04-14",
+          "type": "Championship"
+        }
+      ],
+      "awards": [
+        { "type": "Control", "placement": 2, "event": "Adventist Robotics FTC Championship" },
+        { "type": "Think", "placement": 2, "event": "Adventist Robotics FTC Championship" }
+      ]
+    },
+    {
+      "season": 2024,
+      "events": [
+        {
+          "eventCode": "USARLCMP",
+          "name": "Adventist Robotics League Championship",
+          "start": "2025-04-13",
+          "end": "2025-04-13",
+          "type": "Championship"
+        }
+      ],
+      "awards": [
+        { "type": "Inspire", "placement": 1, "event": "Adventist Robotics League Championship" }
+      ]
+    },
+    {
+      "season": 2025,
+      "events": [
+        {
+          "eventCode": "USARLSAS",
+          "name": "Adventist Robotics Texas Scrimmage",
+          "start": "2026-02-22",
+          "end": "2026-02-22",
+          "type": "Scrimmage"
+        },
+        {
+          "eventCode": "USARLCMP",
+          "name": "Adventist Robotics Championship",
+          "start": "2026-04-11",
+          "end": "2026-04-12",
+          "type": "Qualifier"
+        }
+      ],
+      "awards": [
+        { "type": "DeansListSemiFinalist", "placement": 1, "event": "Adventist Robotics Championship" },
+        { "type": "Inspire", "placement": 1, "event": "Adventist Robotics Championship" },
+        { "type": "Finalist", "placement": 2, "event": "Adventist Robotics Championship" }
+      ]
+    }
+  ]
+}
