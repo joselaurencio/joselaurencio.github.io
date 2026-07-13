@@ -29,6 +29,7 @@ export const SOCIAL_LINKS = {
   // it was never provided, so it's a guess, not verified data.
   github: "https://github.com/joselaurencio",
   youtube: "https://www.youtube.com/@robocodex",
+  linkedin: "https://www.linkedin.com/in/jose-laurencio-8021093a7/",
   ftcScout: "https://ftcscout.org/teams/24813",
   email: "mailto:pralaurencio@gmail.com",
 } as const;

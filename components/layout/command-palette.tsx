@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { CirclePlay, Copy, GitBranch, Moon, Sun } from "lucide-react";
+import { Briefcase, CirclePlay, Copy, GitBranch, Moon, Sun } from "lucide-react";
 
 import type { CommandPaletteItem } from "@/lib/hooks/use-command-palette-data";
 import { SOCIAL_LINKS } from "@/lib/constants";
@@ -96,6 +96,16 @@ export function CommandPalette({ open, onOpenChange, items, theme, onToggleTheme
           >
             <CirclePlay className="size-4" />
             Open YouTube — @robocodex
+          </CommandItem>
+          <CommandItem
+            value="linkedin profile"
+            onSelect={() => {
+              onOpenChange(false);
+              window.open(SOCIAL_LINKS.linkedin, "_blank", "noreferrer");
+            }}
+          >
+            <Briefcase className="size-4" />
+            Open LinkedIn
           </CommandItem>
         </CommandGroup>
       </CommandList>

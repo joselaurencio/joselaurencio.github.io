@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GitBranch, CirclePlay, Mail, ExternalLink } from "lucide-react";
+import { GitBranch, CirclePlay, Briefcase, Mail, ExternalLink } from "lucide-react";
 
 import { PRIMARY_NAV, SECONDARY_NAV, SITE, SOCIAL_LINKS } from "@/lib/constants";
 import { StatusIndicator } from "@/components/mission-control/status-indicator";
@@ -28,6 +28,7 @@ export function Footer() {
             </span>
             <SocialLink href={SOCIAL_LINKS.github} label="GitHub" icon={GitBranch} />
             <SocialLink href={SOCIAL_LINKS.youtube} label="YouTube — @robocodex" icon={CirclePlay} />
+            <SocialLink href={SOCIAL_LINKS.linkedin} label="LinkedIn" icon={Briefcase} />
             <SocialLink href={SOCIAL_LINKS.email} label="Email" icon={Mail} />
           </div>
         </div>
